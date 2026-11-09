@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortletsbyShar - Serviced Apartments in Lagos & Abuja</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h1>ShortletsbyShar</h1>
+                    <p class="tagline">Premium Serviced Apartments</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#apartments">Apartments</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+        <ul>
+            <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="#apartments" onclick="toggleMobileMenu()">Apartments</a></li>
+            <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Find Your Perfect Stay in Lagos & Abuja</h1>
+            <p class="hero-subtitle">Premium serviced apartments for short-term rentals</p>
+            <div class="hero-search">
+                <select id="heroLocation" class="search-input">
+                    <option value="">Select Location</option>
+                    <option value="lagos">Lagos</option>
+                    <option value="abuja">Abuja</option>
+                </select>
+                <select id="heroBedrooms" class="search-input">
+                    <option value="">Bedrooms</option>
+                    <option value="1">1 Bedroom</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4">4+ Bedrooms</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchApartments()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Apartments -->
+    <section id="apartments" class="apartments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Apartments</h2>
+                <p>Discover comfortable and luxurious serviced apartments</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <select id="filterLocation" onchange="filterApartments()">
+                    <option value="">All Locations</option>
+                    <option value="lagos">Lagos</option>
+                    <option value="abuja">Abuja</option>
+                </select>
+                <select id="filterBedrooms" onchange="filterApartments()">
+                    <option value="">All Bedrooms</option>
+                    <option value="1">1 Bedroom</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4">4+ Bedrooms</option>
+                </select>
+                <select id="filterPrice" onchange="filterApartments()">
+                    <option value="">All Prices</option>
+                    <option value="0-50000">Under ₦50,000</option>
+                    <option value="50000-100000">₦50,000 - ₦100,000</option>
+                    <option value="100000-200000">₦100,000 - ₦200,000</option>
+                    <option value="200000-999999">Above ₦200,000</option>
+                </select>
+            </div>
+
+            <!-- Apartments Grid -->
+            <div class="apartments-grid" id="apartmentsGrid">
+                <!-- Apartments will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About ShortletsbyShar</h2>
+                    <p>We provide premium serviced apartments for short-term rentals in Lagos and Abuja. Our apartments are fully furnished, equipped with modern amenities, and located in prime areas for your convenience.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Fully Furnished Apartments</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>24/7 Security</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Prime Locations</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Flexible Booking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>20+</h3>
+                        <p>Apartments</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Cities</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch for bookings and inquiries</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p>+234 XXX XXX XXXX</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>info@shortletsbyshar.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>💬 WhatsApp</h3>
+                        <p><a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="whatsapp-link">Chat with us</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Locations</h3>
+                        <p>Lagos & Abuja, Nigeria</p>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <h2>Book This Apartment</h2>
+            <div id="modalApartmentInfo"></div>
+            <form class="booking-form" onsubmit="handleBookingSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Check-in Date</label>
+                        <input type="date" id="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out Date</label>
+                        <input type="date" id="checkOut" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Adults</label>
+                        <input type="number" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Children</label>
+                        <input type="number" min="0" value="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests (Optional)</label>
+                    <textarea rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShortletsbyShar</h3>
+                    <p>Premium serviced apartments in Lagos and Abuja</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@shortletsbyshar.com</p>
+                    <p>Phone: +234 XXX XXX XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShortletsbyShar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
