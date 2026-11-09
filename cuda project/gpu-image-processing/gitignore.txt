@@ -1,0 +1,52 @@
+# rename this file to .gitignore after cloning
+
+# Build output directories
+build/
+build_release/
+build_debug/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.make
+
+# Compiled binaries and libraries
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.pdb
+gpu_image_proc
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Results and processed images
+results/*.jpg
+results/*.png
+results/*.bmp
+!results/.gitkeep
+
+# Uploaded / processed images
+images/*.jpg
+images/*.png
+images/*.bmp
+images/*.webp
+!images/sample.jpg
+
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
